@@ -6,6 +6,7 @@ import "Transfer.proto";
 import "StateCreateGroup.proto";
 import "StateGroupChangeParent.proto";
 import "TransactionCreation.proto";
+import "BasicTypes.proto";
 
 message TransactionBody {
 	string memo = 1; // max 150 chars
