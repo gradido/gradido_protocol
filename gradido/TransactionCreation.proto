@@ -1,6 +1,6 @@
 syntax = "proto3";
 
-package gradido;
+package model.messages.gradido;
 
 import "BasicTypes.proto";
 
@@ -8,7 +8,6 @@ import "BasicTypes.proto";
 // percent of group users another than the receiver
 message TransactionCreation {
 	ReceiverAmount receiverAmount = 1;
-	// TODO: Change to collision resistent type
 	sint32 ident_hash = 2;
 	
 }
