@@ -9,10 +9,11 @@ import "TransactionCreation.proto";
 
 message TransactionBody {
 	string memo = 1; // max 150 chars
+	TimestampSeconds created = 2;
 	oneof data {
-		StateCreateGroup createGroup = 2;
-		StateGroupChangeParent groupChangeParent = 3;
-		Transfer transfer = 4;
-		TransactionCreation creation = 5;
+		StateCreateGroup createGroup = 6;
+		StateGroupChangeParent groupChangeParent = 7;
+		Transfer transfer = 8;
+		TransactionCreation creation = 9;
 	}
 }
