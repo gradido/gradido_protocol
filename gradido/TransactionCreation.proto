@@ -7,7 +7,7 @@ import "BasicTypes.proto";
 // need signature from group admin or 
 // percent of group users another than the receiver
 message TransactionCreation {
-	ReceiverAmount receiverAmount = 1;
-	sint32 ident_hash = 2;
-	
+	ReceiverAmount receiverAmount = 1; // 40 Byte
+	sint32 ident_hash = 2; // 4 Byte
+	TimestampSeconds target_date = 3; // 8 Byte
 }
