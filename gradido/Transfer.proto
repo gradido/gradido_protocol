@@ -2,7 +2,7 @@ syntax = "proto3";
 
 package model.messages.gradido;
 
-import "BasicTypes.proto";
+import "gradido/BasicTypes.proto";
 
 message Transfer {
 	repeated SenderAmount senderAmounts = 1;

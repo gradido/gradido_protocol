@@ -2,7 +2,7 @@ syntax = "proto3";
 
 package model.messages.gradido;
 
-import "BasicTypes.proto";
+import "gradido/BasicTypes.proto";
 
 // need signature from this group and from parent (if it isn't zero)
 message StateCreateGroup {
