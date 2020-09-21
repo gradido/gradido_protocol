@@ -1,6 +1,6 @@
 syntax = "proto3";
 
-package model.messages.gradido;
+package proto.gradido;
 
 message Key {
     oneof key {
@@ -32,13 +32,9 @@ message TimestampSeconds {
     int64 seconds = 1; // Number of complete seconds since the start of the epoch
 }
 
-message SenderAmount {
-	bytes ed25519_sender_pubkey = 1;
+message TransferAmount {
+	bytes pubkey = 1;
 	sint64 amount = 2;
-	sint64 senderFinalBalance = 3; // sender balance after transaction, including perishability
 }
 
-message ReceiverAmount {
-	bytes ed25519_receiver_pubkey = 1;
-	sint64 amount = 2;
-}
+
