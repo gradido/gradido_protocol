@@ -1,4 +1,5 @@
-syntax = "proto3";
+
+yntax = "proto3";
 
 package proto.gradido;
 
@@ -11,14 +12,13 @@ import "gradido/BasicTypes.proto";
 
 message TransactionBody {
 	string memo = 1; // max 150 chars
+	uint64 version_number = 2;
 
 	oneof data {
-        GradidoTransfer transfer = 2;
-		GradidoCreation creation = 3;
-        GroupFriendsUpdate group_friends_update = 4;
-        GroupMemberUpdate group_member_update = 5;
-	}
-
-    uint64 version_number = 6;
+        GradidoTransfer transfer = 3;
+		GradidoCreation creation = 4;
+        GroupFriendsUpdate group_friends_update = 5;
+        GroupMemberUpdate group_member_update = 6;
+	} 
 }
 
