@@ -3,10 +3,7 @@ syntax = "proto3";
 
 package proto.gradido;
 
-
 import "gradido/ManageNodeGroupAdd.proto";
-import "gradido/BasicTypes.proto";
-
 
 message ManageNodeBody {
     uint64 version_number = 1;
