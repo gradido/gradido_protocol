@@ -13,7 +13,6 @@ import "gradido/BasicTypes.proto";
 message TransactionBody {
     string memo = 1; // max 150 chars
     TimestampSeconds created = 2;
-    uint64 version_number = 3;
     oneof data {
         ManageNodeGroupAdd group_add = 5;
         GradidoTransfer transfer = 6;

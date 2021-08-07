@@ -7,19 +7,15 @@ import "gradido/BasicTypes.proto";
 
 /*
 	id will be set by Node server
-	txHash will be also set by Node server,
-	  calculated from previous transaction txHash and this id, sigMap and received;
+	running_hash will be also set by Node server,
+	  calculated from previous transaction running_hash and this id, transaction and received;
 */
 
-
-message TransactionBody {
-    string memo = 1; // max 150 chars
-    TimestampSeconds created = 2;
-    uint64 version_number = 3;
-    oneof data {
-        GradidoTransfer transfer = 6;
-        GradidoCreation creation = 7;
-        GroupFriendsUpdate group_friends_update = 8;
-        GroupMemberUpdate group_member_update = 9;
-    }    
+message GradidoBlock {
+    uint64 id = 1;
+    GradidoTransaction transaction = 2;
+    TimestampSeconds received = 3;    
+    uint32 version_number = 4;
+    bytes running_hash = 5;
+    bytes message_id = 6; // message id in underlaying blockchain like iota
 }
