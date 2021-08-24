@@ -4,14 +4,6 @@ package proto.gradido;
 
 import "gradido/BasicTypes.proto";
 
-/*
-	id will be set by Node server
-	txHash will be also set by Node server,
-	  calculated from previous transaction txHash and this id, sigMap and received;
-*/
-
-
-
 message GradidoTransaction {
 	SignatureMap sig_map = 1;
 
