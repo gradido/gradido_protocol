@@ -6,7 +6,6 @@ import "gradido/GradidoTransfer.proto";
 import "gradido/GradidoCreation.proto";
 import "gradido/GroupFriendsUpdate.proto";
 import "gradido/GroupMemberUpdate.proto";
-import "gradido/ManageNodeGroupAdd.proto";
 import "gradido/BasicTypes.proto";
 
 
@@ -14,7 +13,6 @@ message TransactionBody {
     string memo = 1; // max 150 chars
     TimestampSeconds created = 2;
     oneof data {
-        GlobalGroupAdd group_add = 5;
         GradidoTransfer transfer = 6;
         GradidoCreation creation = 7;
         GroupFriendsUpdate group_friends_update = 8;
