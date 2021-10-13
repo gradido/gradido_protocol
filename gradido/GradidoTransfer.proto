@@ -11,8 +11,7 @@ message LocalTransfer {
 }
 
 message CrossGroupTransfer {
-    TransferAmount sender = 1;
-    bytes receiver = 2;
+    LocalTransfer transfer = 1;
     string other_group = 3;
     // this matches related OutboundTransfer.paired_transaction_id
     Timestamp paired_transaction_id = 4;

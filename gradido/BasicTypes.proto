@@ -3,18 +3,12 @@ syntax = "proto3";
 package proto.gradido;
 
 message Key {
-    oneof key {
-        bytes ed25519 = 2; // ed25519 signature (libsodium default)
-		bytes ed25519_ref10 = 3; // ed25519 ref10 signature
-    }
+	bytes ed25519 = 2; // ed25519 signature (libsodium default)
 }
 
 message SignaturePair {
     bytes pubKey = 1;  
-    oneof signature {
-        bytes ed25519 = 2; // ed25519 signature (libsodium default)
-		bytes ed25519_ref10 = 3; // ed25519 ref10 signature
-    }
+    bytes signature = 2;
 }
 
 message SignatureMap {
@@ -37,11 +31,5 @@ message TransferAmount {
 	sint64 amount = 2;
 }
 
-// copyed from hedera topic id
-message HederaID {
-    int64 shardNum = 1; // The shard number (nonnegative)
-    int64 realmNum = 2; // The realm number (nonnegative)
-    int64 topicNum = 3; // Unique topic identifier within a realm (nonnegative).
-}
 
 
