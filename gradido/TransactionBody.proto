@@ -11,9 +11,17 @@ import "gradido/BasicTypes.proto";
 
 
 message TransactionBody {
+    enum TransactionType {
+		LOCAL = 0;
+		INBOUND = 1;
+		OUTBOUND = 2;
+	};
+    
     string memo = 1; // max 150 chars
     TimestampSeconds created = 2;
-    uint64 version_number = 3;
+    uint64 version_number = 3;  
+
+	TransactionType type = 4;
     oneof data {
 		GlobalGroupAdd groupAdd = 5;
         GradidoTransfer transfer = 6;
@@ -21,5 +29,6 @@ message TransactionBody {
         GroupFriendsUpdate group_friends_update = 8;
         GroupMemberUpdate group_member_update = 9;
     }    
+    
 }
 

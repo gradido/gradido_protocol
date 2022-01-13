@@ -15,4 +15,7 @@ message GradidoTransaction {
 	// Maybe but hedera has at first concrete type and has depracted that now, so is must 
 	// be reason for that
 	bytes body_bytes = 2; // TransactionBody
+
+	// if it is a cross group transaction the parent message id from outbound transaction 
+	bytes parent_message_id = 3;
 }

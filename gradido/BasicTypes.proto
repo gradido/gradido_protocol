@@ -29,6 +29,7 @@ message TimestampSeconds {
 message TransferAmount {
 	bytes pubkey = 1;
 	sint64 amount = 2;
+    uint32 coin_color = 3;
 }
 
 
