@@ -2,6 +2,12 @@ syntax = "proto3";
 
 package proto.gradido;
 
+// connect group together
+// only CrossGroupType CROSS (in TransactionBody)
 message GroupFriendsUpdate {
-    
+    // if set to true, colors of this both groups are traited as the same
+    // on creation user get coins stil in there color
+    // on transfer into another group which a connection exist, 
+    // coins will be automatic swapped into user group color coin (if fusion between src coin and dst coin is enabled)
+    bool color_fusion = 1; 
 }

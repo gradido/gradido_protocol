@@ -16,6 +16,6 @@ message GradidoTransaction {
 	// be reason for that
 	bytes body_bytes = 2; // TransactionBody
 
-	// if it is a cross group transaction the parent message id from outbound transaction 
+	// if it is a cross group transaction the parent message id from outbound transaction or other by cross
 	bytes parent_message_id = 3;
 }
