@@ -8,3 +8,20 @@ message GradidoTransfer {
     TransferAmount sender = 1;
     bytes recipiant = 2;
 }
+
+// transaction type for chargeable transactions
+// for transaction for people which haven't a account already
+// consider using a seed number for key pair generation for recipiant 
+// using seed as redeem key for claiming transaction, technically make a default Transfer transaction from recipiant address
+// to own account 
+message GradidoDeferredTransfer {
+    // amount is amount with decay for timespan between transaction was received and timeout
+    // useable amount can be calculated 
+    // recipiant address don't need to be registered in blockchain with register address
+    GradidoTransfer transfer = 1;
+    // if timeout timestamp is reached if it wasn't used, it will be booked back minus decay
+    // technically on blockchain no additional transaction will be created because how should sign it?
+    // the decay for amount and the seconds until timeout is lost no matter what happend
+    // consider is as fee for this service
+    Timestamp timeout = 2;
+}

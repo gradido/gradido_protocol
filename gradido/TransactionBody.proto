@@ -31,6 +31,7 @@ message TransactionBody {
         GroupFriendsUpdate group_friends_update = 8;
         RegisterAddress register_address = 9;
         GlobalGroupAdd global_group_add = 10;
+        GradidoDeferredTransfer deferred_transfer = 11;
     }       
 }
 
