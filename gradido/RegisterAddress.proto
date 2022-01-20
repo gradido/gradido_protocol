@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+package proto.gradido;
+
+// group founder must be first registering his root address,
+// the same which he used signing the global group add transaction
+message RegisterAddress {
+    enum AddressType {
+        PRIVATE = 0;
+        COMPANY = 1; // no creations allowed
+        SUBACCOUNT = 2; // no creations allowed
+    };
+    
+    bytes user_pubkey = 1; // user root pubkey, can be empty for hidden subaccounts 
+    AddressType address_type = 2;
+    bytes name_hash = 3; // optional for finding on blockchain by name without need for asking community server
+    bytes subaccount_pubkey = 4; // only set for address type SUBACCOUNT
+}
