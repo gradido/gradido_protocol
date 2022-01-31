@@ -6,8 +6,8 @@ package proto.gradido;
 // the same which he used signing the global group add transaction
 message RegisterAddress {
     enum AddressType {
-        PRIVATE = 0;
-        COMPANY = 1; // no creations allowed
+        HUMAN = 0;
+        PROJECT = 1; // no creations allowed
         SUBACCOUNT = 2; // no creations allowed
     };
     
