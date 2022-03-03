@@ -2,8 +2,8 @@ syntax = "proto3";
 
 package proto.gradido;
 
-import "gradido/GradidoTransaction.proto";
-import "gradido/BasicTypes.proto";
+import "proto/gradido/GradidoTransaction.proto";
+import "proto/gradido/BasicTypes.proto";
 
 /*
 	id will be set by Node server

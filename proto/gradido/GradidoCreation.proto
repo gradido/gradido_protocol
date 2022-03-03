@@ -2,7 +2,7 @@ syntax = "proto3";
 
 package proto.gradido;
 
-import "gradido/BasicTypes.proto";
+import "proto/gradido/BasicTypes.proto";
 
 // need signature from group admin or 
 // percent of group users another than the receiver

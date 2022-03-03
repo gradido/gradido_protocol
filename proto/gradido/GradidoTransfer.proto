@@ -2,7 +2,7 @@ syntax = "proto3";
 
 package proto.gradido;
 
-import "gradido/BasicTypes.proto";
+import "proto/gradido/BasicTypes.proto";
 
 message GradidoTransfer {
     TransferAmount sender = 1;

@@ -2,13 +2,13 @@ syntax = "proto3";
 
 package proto.gradido;
 
-import "gradido/BasicTypes.proto";
+import "proto/gradido/BasicTypes.proto";
 
-import "gradido/GradidoTransfer.proto";
-import "gradido/GradidoCreation.proto";
-import "gradido/GroupFriendsUpdate.proto";
-import "gradido/RegisterAddress.proto";
-import "gradido/GlobalGroupAdd.proto";
+import "proto/gradido/GradidoTransfer.proto";
+import "proto/gradido/GradidoCreation.proto";
+import "proto/gradido/GroupFriendsUpdate.proto";
+import "proto/gradido/RegisterAddress.proto";
+import "proto/gradido/GlobalGroupAdd.proto";
 
 
 message TransactionBody {
