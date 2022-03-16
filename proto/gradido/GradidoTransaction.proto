@@ -20,5 +20,5 @@ message GradidoTransaction {
 	bytes parent_message_id = 3;
 
 	// transaction id from apollo server
-	uint64 apollo_transaction_id = 6;
+	uint64 apollo_transaction_id = 4;
 }
