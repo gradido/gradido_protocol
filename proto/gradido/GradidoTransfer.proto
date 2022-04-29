@@ -2,7 +2,7 @@ syntax = "proto3";
 
 package proto.gradido;
 
-import "gradido/BasicTypes.proto";
+import "proto/gradido/BasicTypes.proto";
 
 message GradidoTransfer {
     TransferAmount sender = 1;
@@ -26,4 +26,8 @@ message GradidoDeferredTransfer {
     // consider is as fee for this service
     // rest decay could be transfered back as separat transaction
     Timestamp timeout = 2;
+
+    // split for n recipient 
+    // max gradido per recipient? or per transaction with cooldown?
+
 }
