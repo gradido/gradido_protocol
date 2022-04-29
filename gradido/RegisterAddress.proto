@@ -6,9 +6,10 @@ package proto.gradido;
 // the same which he used signing the global group add transaction
 message RegisterAddress {
     enum AddressType {
-        HUMAN = 0;
-        PROJECT = 1; // no creations allowed
-        SUBACCOUNT = 2; // no creations allowed
+        NONE = 0; // if no address was found
+        HUMAN = 1;
+        PROJECT = 2; // no creations allowed
+        SUBACCOUNT = 3; // no creations allowed
     };
     
     bytes user_pubkey = 1; // user root pubkey, can be empty for hidden subaccounts 
