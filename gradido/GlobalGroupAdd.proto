@@ -1,9 +1,0 @@
-syntax = "proto3";
-
-package proto.gradido;
-
-message GlobalGroupAdd {
-    string   group_name = 1;
-	string   group_alias = 2;
-	string   parent_group_alias = 3; 
-}

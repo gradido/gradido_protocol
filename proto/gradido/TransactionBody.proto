@@ -1,0 +1,37 @@
+syntax = "proto3";
+
+package proto.gradido;
+
+import "proto/gradido/BasicTypes.proto";
+
+import "proto/gradido/GradidoTransfer.proto";
+import "proto/gradido/GradidoCreation.proto";
+import "proto/gradido/GroupFriendsUpdate.proto";
+import "proto/gradido/RegisterAddress.proto";
+import "proto/gradido/GlobalGroupAdd.proto";
+
+
+message TransactionBody {
+    enum CrossGroupType {
+		LOCAL = 0;
+		INBOUND = 1;
+		OUTBOUND = 2;
+        CROSS = 3; // for cross group transaction which haven't a direction like group friend update
+	};
+    
+    string memo = 1; // max 150 chars
+    TimestampSeconds created = 2;
+    uint64 version_number = 3;  
+
+	CrossGroupType type = 4;
+    string other_group = 5; // only used if not local transaction
+    oneof data {
+        GradidoTransfer transfer = 6;
+        GradidoCreation creation = 7;
+        GroupFriendsUpdate group_friends_update = 8;
+        RegisterAddress register_address = 9;
+        GlobalGroupAdd global_group_add = 10;
+        GradidoDeferredTransfer deferred_transfer = 11;
+    }       
+}
+

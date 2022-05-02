@@ -2,7 +2,7 @@ syntax = "proto3";
 
 package proto.gradido;
 
-import "gradido/BasicTypes.proto";
+import "proto/gradido/BasicTypes.proto";
 
 message GradidoTransaction {
 	SignatureMap sig_map = 1;
@@ -15,4 +15,10 @@ message GradidoTransaction {
 	// Maybe but hedera has at first concrete type and has depracted that now, so is must 
 	// be reason for that
 	bytes body_bytes = 2; // TransactionBody
+
+	// if it is a cross group transaction the parent message id from outbound transaction or other by cross
+	bytes parent_message_id = 3;
+
+	// transaction id from apollo server
+	uint64 apollo_transaction_id = 4;
 }
