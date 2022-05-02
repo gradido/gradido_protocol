@@ -8,7 +8,6 @@ import "proto/gradido/GradidoTransfer.proto";
 import "proto/gradido/GradidoCreation.proto";
 import "proto/gradido/GroupFriendsUpdate.proto";
 import "proto/gradido/RegisterAddress.proto";
-import "proto/gradido/GlobalGroupAdd.proto";
 
 
 message TransactionBody {
@@ -30,8 +29,7 @@ message TransactionBody {
         GradidoCreation creation = 7;
         GroupFriendsUpdate group_friends_update = 8;
         RegisterAddress register_address = 9;
-        GlobalGroupAdd global_group_add = 10;
-        GradidoDeferredTransfer deferred_transfer = 11;
+        GradidoDeferredTransfer deferred_transfer = 10; 
     }       
 }
 
