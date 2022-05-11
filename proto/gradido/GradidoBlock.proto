@@ -15,7 +15,7 @@ message GradidoBlock {
     uint64 id = 1;
     GradidoTransaction transaction = 2;
     TimestampSeconds received = 3;    
-    uint32 version_number = 4;
+    string version_number = 4;
     bytes running_hash = 5;
     bytes message_id = 6; // message id in underlaying blockchain like iota
     string final_gdd = 7; // gdd amount after transaction was successfull, part of running hash, work only as long as one transaction per block
