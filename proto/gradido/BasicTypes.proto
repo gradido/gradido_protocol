@@ -32,5 +32,14 @@ message TransferAmount {
     string group_id = 3;
 }
 
+message EncryptedMemo {
+    bytes pubKey = 1; // pubkey which was used for encryption
+    bytes memo = 2; // encrypted memo, max 250 chars 
+}
+
+message EncryptedMemoMap {
+    repeated EncryptedMemo = 1;
+}
+
 
 
