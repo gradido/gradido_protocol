@@ -10,3 +10,9 @@ message GradidoCreation {
 	TransferAmount recipient = 1; // 40 Byte
 	TimestampSeconds target_date = 3; // 8 Byte
 }
+
+// Micro Transaction
+// setup with signature of someone how is allowed to create
+// configure how much gdd per day, how many hours in between
+// enable/disable
+// 
