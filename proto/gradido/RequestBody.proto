@@ -11,8 +11,9 @@ message RequestBody {
     string versionNumber = 3;  
     bytes dhtPubkey = 4; // dht pubkey of requester for connections over dht for further discussions (works only as long as client is online!)
 
+    /* // TODO: Define some requests that differ from operations in that they are not stored permanently.
     oneof data {
-        // TODO: Define some requests that differ from operations in that they are not stored permanently.
-    }       
+        
+    } */      
 }
 

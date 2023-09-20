@@ -34,7 +34,7 @@ message EncryptedMemo {
 }
 
 message EncryptedMemoMap {
-    repeated EncryptedMemo = 1;
+    repeated EncryptedMemo encryptedMemo = 1;
 }
 
 
