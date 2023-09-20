@@ -4,7 +4,7 @@ package proto.gradido;
 
 // connect group together
 // only CrossGroupType CROSS (in TransactionBody)
-message GroupFriendsUpdate {
+message CommunityFriendsUpdate {
     // if set to true, colors of this both groups are traited as the same
     // on creation user get coins stil in there color
     // on transfer into another group which a connection exist, 
