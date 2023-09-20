@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package proto.gradido;
+
+message CommunityRoot {
+	bytes rootPubkey = 1;
+	bytes gmwPubkey = 2;
+	bytes aufPubkey = 3;
+}
