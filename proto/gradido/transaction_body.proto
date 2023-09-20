@@ -6,7 +6,7 @@ import "proto/gradido/basic_types.proto";
 
 import "proto/gradido/gradido_transfer.proto";
 import "proto/gradido/gradido_creation.proto";
-import "proto/gradido/group_friends_update.proto";
+import "proto/gradido/community_friends_update.proto";
 import "proto/gradido/register_address.proto";
 
 
@@ -27,7 +27,7 @@ message TransactionBody {
     oneof data {
         GradidoTransfer transfer = 6;
         GradidoCreation creation = 7;
-        GroupFriendsUpdate group_friends_update = 8;
+        CommunityFriendsUpdate community_friends_update = 8;
         RegisterAddress register_address = 9;
         GradidoDeferredTransfer deferred_transfer = 10; 
     }       
