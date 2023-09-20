@@ -1,0 +1,22 @@
+syntax = "proto3";
+
+package proto.gradido;
+
+import "proto/gradido/gradido_transaction.proto";
+import "proto/gradido/basic_types.proto";
+
+/*
+	id will be set by Node server
+	running_hash will be also set by Node server,
+	  calculated from previous transaction running_hash and this id, transaction and received;
+*/
+
+message ConfirmedTransaction {
+    uint64 id = 1;
+    GradidoTransaction transaction = 2;
+    TimestampSeconds confirmed_at = 3;    
+    string version_number = 4;
+    bytes running_hash = 5;
+    bytes message_id = 6; // message id in underlaying blockchain like iota
+    string account_balance = 7; // gdd amount after transaction was successfull, part of running hash, work only as long as one transaction per block
+}

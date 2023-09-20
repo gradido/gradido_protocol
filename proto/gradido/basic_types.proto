@@ -3,12 +3,12 @@ syntax = "proto3";
 package proto.gradido;
 
 message SignaturePair {
-    bytes pubKey = 1;  
+    bytes pubkey = 1;  
     bytes signature = 2;
 }
 
 message SignatureMap {
-    repeated SignaturePair sigPair = 1; // Each signature pair corresponds to a unique Key required to sign the transaction.
+    repeated SignaturePair sig_pair = 1; // Each signature pair corresponds to a unique Key required to sign the transaction.
 }
 
 /* An exact date and time. This is the same data structure as the protobuf Timestamp.proto (see the comments in https://github.com/google/protobuf/blob/master/src/google/protobuf/timestamp.proto) */
@@ -25,16 +25,16 @@ message TimestampSeconds {
 message TransferAmount {
 	bytes pubkey = 1;
 	string amount = 2;
-    string communityId = 3;
+    string community_id = 3;
 }
 
 message EncryptedMemo {
-    bytes pubKey = 1; // pubkey which was used for encryption
+    bytes pubkey = 1; // pubkey which was used for encryption
     bytes memo = 2; // encrypted memo, max 250 chars 
 }
 
 message EncryptedMemoMap {
-    repeated EncryptedMemo encryptedMemo = 1;
+    repeated EncryptedMemo encrypted_memo = 1;
 }
 
 

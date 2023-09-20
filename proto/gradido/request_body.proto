@@ -2,14 +2,14 @@ syntax = "proto3";
 
 package proto.gradido;
 
-import "proto/gradido/BasicTypes.proto";
+import "proto/gradido/basic_types.proto";
 
 message RequestBody {
     
     EncryptedMemoMap memo = 1; 
-    Timestamp createdAt = 2;
-    string versionNumber = 3;  
-    bytes dhtPubkey = 4; // dht pubkey of requester for connections over dht for further discussions (works only as long as client is online!)
+    Timestamp created_at = 2;
+    string version_number = 3;  
+    bytes dht_pubkey = 4; // dht pubkey of requester for connections over dht for further discussions (works only as long as client is online!)
 
     /* // TODO: Define some requests that differ from operations in that they are not stored permanently.
     oneof data {

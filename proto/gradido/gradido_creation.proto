@@ -2,11 +2,11 @@ syntax = "proto3";
 
 package proto.gradido;
 
-import "proto/gradido/BasicTypes.proto";
+import "proto/gradido/basic_types.proto";
 
 // need signature from group admin or 
 // percent of group users another than the receiver
 message GradidoCreation {
 	TransferAmount recipient = 1; // 40 Byte
-	TimestampSeconds targetDate = 3; // 8 Byte
+	TimestampSeconds target_date = 3; // 8 Byte
 }

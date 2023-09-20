@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+package proto.gradido;
+
+import "proto/gradido/basic_types.proto";
+
+message GradidoRequest {
+	SignaturePair signature_pair = 1;
+
+	bytes body_bytes = 2; // RequestBody
+
+}
