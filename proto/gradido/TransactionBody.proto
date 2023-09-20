@@ -19,17 +19,17 @@ message TransactionBody {
 	};
     
     string memo = 1; // max 150 chars
-    TimestampSeconds created = 2;
-    string version_number = 3;  
+    Timestamp createdAt = 2;
+    string versionNumber = 3;  
 
 	CrossGroupType type = 4;
-    string other_group = 5; // only used if not local transaction
+    string otherGroup = 5; // only used if not local transaction
     oneof data {
         GradidoTransfer transfer = 6;
         GradidoCreation creation = 7;
-        GroupFriendsUpdate group_friends_update = 8;
-        RegisterAddress register_address = 9;
-        GradidoDeferredTransfer deferred_transfer = 10; 
+        GroupFriendsUpdate groupFriendsUpdate = 8;
+        RegisterAddress registerAddress = 9;
+        GradidoDeferredTransfer deferredTransfer = 10; 
     }       
 }
 

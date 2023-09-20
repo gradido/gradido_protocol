@@ -8,5 +8,5 @@ import "proto/gradido/BasicTypes.proto";
 // percent of group users another than the receiver
 message GradidoCreation {
 	TransferAmount recipient = 1; // 40 Byte
-	TimestampSeconds target_date = 3; // 8 Byte
+	TimestampSeconds targetDate = 3; // 8 Byte
 }

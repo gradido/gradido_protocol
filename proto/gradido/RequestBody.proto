@@ -4,24 +4,15 @@ package proto.gradido;
 
 import "proto/gradido/BasicTypes.proto";
 
-import "proto/gradido/GradidoTransfer.proto";
-import "proto/gradido/GradidoCreation.proto";
-import "proto/gradido/GroupFriendsUpdate.proto";
-import "proto/gradido/RegisterAddress.proto";
-
-
 message RequestBody {
     
     EncryptedMemoMap memo = 1; 
-    TimestampSeconds created = 2;
-    string version_number = 3;  
-    bytes dht_pubkey = 4; // dht pubkey of requester for connections over dht for further discussions (works only as long as client is online!)
+    Timestamp createdAt = 2;
+    string versionNumber = 3;  
+    bytes dhtPubkey = 4; // dht pubkey of requester for connections over dht for further discussions (works only as long as client is online!)
 
     oneof data {
-        GradidoTransfer transfer = 6;
-        GradidoCreation creation = 7;
-        GroupFriendsUpdate group_friends_update = 8;
-        RegisterAddress register_address = 9;
+        // TODO: Define some requests that differ from operations in that they are not stored permanently.
     }       
 }
 

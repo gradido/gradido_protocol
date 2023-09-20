@@ -15,8 +15,8 @@ message RegisterAddress {
         CRYPTO_ACCOUNT = 6; // user control his keys, no creations
     };
     
-    bytes user_pubkey = 1; // user root pubkey, can be empty for hidden subaccounts 
-    AddressType address_type = 2;
-    bytes name_hash = 3; // optional for finding on blockchain by name without need for asking community server
-    bytes subaccount_pubkey = 4; // only set for address type SUBACCOUNT
+    bytes userPubkey = 1; // user root pubkey, can be empty for hidden subaccounts 
+    AddressType addressType = 2;
+    bytes nameHash = 3; // optional for finding on blockchain by name without need for asking community server
+    bytes subaccountPubkey = 4; // only set for address type SUBACCOUNT
 }

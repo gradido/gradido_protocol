@@ -5,7 +5,7 @@ package proto.gradido;
 import "proto/gradido/BasicTypes.proto";
 
 message GradidoTransaction {
-	SignatureMap sig_map = 1;
+	SignatureMap sigMap = 1;
 
     // TODO: consider if having concrete type wouldn't be better; 
     // having bytes would better show what is signed, still for 
@@ -14,8 +14,8 @@ message GradidoTransaction {
 	// UNICORN ANSWER:
 	// Maybe but hedera has at first concrete type and has depracted that now, so is must 
 	// be reason for that
-	bytes body_bytes = 2; // TransactionBody
+	bytes bodyBytes = 2; // TransactionBody
 
 	// if it is a cross group transaction the parent message id from outbound transaction or other by cross
-	bytes parent_message_id = 3;
+	bytes parentMessageId = 3;
 }

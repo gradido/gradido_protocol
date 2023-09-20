@@ -25,7 +25,7 @@ message GradidoDeferredTransfer {
     // the decay for amount and the seconds until timeout is lost no matter what happend
     // consider is as fee for this service
     // rest decay could be transfered back as separat transaction
-    Timestamp timeout = 2;
+    TimestampSeconds timeout = 2;
 
     // split for n recipient 
     // max gradido per recipient? or per transaction with cooldown?

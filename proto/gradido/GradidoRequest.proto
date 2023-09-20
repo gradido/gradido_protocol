@@ -5,8 +5,8 @@ package proto.gradido;
 import "proto/gradido/BasicTypes.proto";
 
 message GradidoRequest {
-	SignaturePair signature_pair = 1;
+	SignaturePair signaturePair = 1;
 
-	bytes body_bytes = 2; // RequestBody
+	bytes bodyBytes = 2; // RequestBody
 
 }
