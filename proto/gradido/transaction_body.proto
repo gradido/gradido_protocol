@@ -8,6 +8,7 @@ import "proto/gradido/gradido_transfer.proto";
 import "proto/gradido/gradido_creation.proto";
 import "proto/gradido/community_friends_update.proto";
 import "proto/gradido/register_address.proto";
+import "proto/gradido/community_root.proto";
 
 
 message TransactionBody {
@@ -30,6 +31,7 @@ message TransactionBody {
         CommunityFriendsUpdate community_friends_update = 8;
         RegisterAddress register_address = 9;
         GradidoDeferredTransfer deferred_transfer = 10; 
+        CommunityRoot community_root = 11;
     }       
 }
 
