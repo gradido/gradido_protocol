@@ -18,5 +18,6 @@ message RegisterAddress {
     bytes user_pubkey = 1; // user root pubkey, can be empty for hidden subaccounts 
     AddressType address_type = 2;
     bytes name_hash = 3; // optional for finding on blockchain by name without need for asking community server
-    bytes subaccount_pubkey = 4; // only set for address type SUBACCOUNT
+    bytes account_pubkey = 4; // public key of account
+    uint32 derivation_index = 5; // derivation index from user or empty if hidden account
 }
