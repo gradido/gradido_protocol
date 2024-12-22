@@ -21,13 +21,20 @@ message GradidoDeferredTransfer {
     // recipiant address don't need to be registered in blockchain with register address
     GradidoTransfer transfer = 1;
     // if timeout timestamp is reached if it wasn't used, it will be booked back minus decay
-    // technically on blockchain no additional transaction will be created because how should sign it?
-    // the decay for amount and the seconds until timeout is lost no matter what happend
-    // consider is as fee for this service
-    // rest decay could be transfered back as separat transaction
+    // with a GradidoTimeoutDeferredTransfer Transaction which don't need a signature
     TimestampSeconds timeout = 2;
 
     // split for n recipient 
     // max gradido per recipient? or per transaction with cooldown?
 
+}
+
+// redeem deferred transfer and book back decay rest for redeemed amount 
+message GradidoRedeemDeferredTransfer {
+    uint64 deferredTransferTransactionNr = 1;
+    GradidoTransfer transfer = 2;
+}
+
+message GradidoTimeoutDeferredTransfer {
+    uint64 deferredTransferTransactionNr = 1;
 }

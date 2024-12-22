@@ -11,6 +11,16 @@ import "proto/gradido/register_address.proto";
 import "proto/gradido/community_root.proto";
 
 
+message EncryptedMemo {
+    enum MemoKeyType {
+        SHARED_SECRET = 0,
+        COMMUNITY_SECRET = 1,
+        PLAIN = 2,
+    };
+    MemoKeyType type = 1;
+    bytes memo = 2; // max 150 chars unencrypted
+}
+
 message TransactionBody {
     enum CrossGroupType {
 		LOCAL = 0;
@@ -19,7 +29,7 @@ message TransactionBody {
         CROSS = 3; // for cross group transaction which haven't a direction like group friend update
 	};
     
-    string memo = 1; // max 150 chars
+    repeated EncryptedMemo = 1; 
     Timestamp created_at = 2;
     string version_number = 3;  
 
@@ -32,6 +42,8 @@ message TransactionBody {
         RegisterAddress register_address = 9;
         GradidoDeferredTransfer deferred_transfer = 10; 
         CommunityRoot community_root = 11;
+        GradidoRedeemDeferredTransfer = 12;
+        GradidoTimeoutDeferredTransfer = 13;
     }       
 }
 

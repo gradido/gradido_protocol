@@ -2,6 +2,15 @@ syntax = "proto3";
 
 package proto.gradido;
 
+message AccountBalance {
+  enum BalanceOwner {
+      SENDER = 0;
+      RECIPIENT = 1;
+  };
+  BalanceOwner balance_owner = 1;
+  int64        gdd;
+}
+
 message SignaturePair {
     bytes pubkey = 1;  
     bytes signature = 2;
@@ -24,7 +33,7 @@ message TimestampSeconds {
 
 message TransferAmount {
 	bytes pubkey = 1;
-	string amount = 2;
+	int64 amount = 2;
     string community_id = 3;
 }
 

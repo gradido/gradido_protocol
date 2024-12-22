@@ -7,13 +7,7 @@ import "proto/gradido/basic_types.proto";
 message GradidoTransaction {
 	SignatureMap sig_map = 1;
 
-    // TODO: consider if having concrete type wouldn't be better; 
-    // having bytes would better show what is signed, still for 
-    // blockchain it doesn't matter, as it has to be serialized again
-    // when validating
-	// UNICORN ANSWER:
-	// Maybe but hedera has at first concrete type and has depracted that now, so is must 
-	// be reason for that
+    // using serialized body here, because signature depends on it and different protobuf implementations produce different bytes
 	bytes body_Bytes = 2; // TransactionBody
 
 	// if it is a cross group transaction the parent message id from outbound transaction or other by cross
