@@ -11,16 +11,6 @@ import "proto/gradido/register_address.proto";
 import "proto/gradido/community_root.proto";
 
 
-message EncryptedMemo {
-    enum MemoKeyType {
-        SHARED_SECRET = 0,
-        COMMUNITY_SECRET = 1,
-        PLAIN = 2,
-    };
-    MemoKeyType type = 1;
-    bytes memo = 2; // max 150 chars unencrypted
-}
-
 message TransactionBody {
     enum CrossGroupType {
 		LOCAL = 0;

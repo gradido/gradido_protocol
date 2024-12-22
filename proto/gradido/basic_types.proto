@@ -11,6 +11,16 @@ message AccountBalance {
   int64        gdd;
 }
 
+message EncryptedMemo {
+    enum MemoKeyType {
+        SHARED_SECRET = 0,
+        COMMUNITY_SECRET = 1,
+        PLAIN = 2,
+    };
+    MemoKeyType type = 1;
+    bytes memo = 2; // max 150 chars unencrypted
+}
+
 message SignaturePair {
     bytes pubkey = 1;  
     bytes signature = 2;
