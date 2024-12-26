@@ -22,7 +22,7 @@ message GradidoDeferredTransfer {
     GradidoTransfer transfer = 1;
     // if confiremdAt + timeoutDuration timestamp is reached if it wasn't used, it will be booked back minus decay
     // with a GradidoTimeoutDeferredTransfer Transaction which don't need a signature
-    uint32 timeoutDuration = 2;
+    uint32 timeout_duration = 2;
 
     // split for n recipient 
     // max gradido per recipient? or per transaction with cooldown?
