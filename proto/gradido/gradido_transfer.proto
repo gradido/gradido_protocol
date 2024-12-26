@@ -20,9 +20,9 @@ message GradidoDeferredTransfer {
     // useable amount can be calculated 
     // recipiant address don't need to be registered in blockchain with register address
     GradidoTransfer transfer = 1;
-    // if timeout timestamp is reached if it wasn't used, it will be booked back minus decay
+    // if confiremdAt + timeoutDuration timestamp is reached if it wasn't used, it will be booked back minus decay
     // with a GradidoTimeoutDeferredTransfer Transaction which don't need a signature
-    TimestampSeconds timeout = 2;
+    uint32 timeoutDuration = 2;
 
     // split for n recipient 
     // max gradido per recipient? or per transaction with cooldown?
