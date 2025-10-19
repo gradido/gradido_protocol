@@ -3,12 +3,9 @@ syntax = "proto3";
 package proto.gradido;
 
 message AccountBalance {
-  enum BalanceOwner {
-      SENDER = 0;
-      RECIPIENT = 1;
-  };
-  BalanceOwner balance_owner = 1;
-  int64        balance; // gdd balance in cents 1000 cents = 1 GDD
+  bytes        pubkey = 1;
+  int64        balance = 2;
+  string       community_id = 3;
 }
 
 message EncryptedMemo {
@@ -18,7 +15,7 @@ message EncryptedMemo {
         PLAIN = 2,
     };
     MemoKeyType type = 1;
-    bytes memo = 2; // max 150 chars unencrypted
+    bytes memo = 2; 
 }
 
 message SignaturePair {
