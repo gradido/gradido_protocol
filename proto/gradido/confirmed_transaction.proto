@@ -4,6 +4,7 @@ package proto.gradido;
 
 import "proto/gradido/gradido_transaction.proto";
 import "proto/gradido/basic_types.proto";
+import "proto/gradido/ledger_metadata.proto";
 
 /*
 	id will be set by Node server
@@ -12,13 +13,13 @@ import "proto/gradido/basic_types.proto";
 */
 
 message ConfirmedTransaction {   
-
     uint64 id = 1;
     GradidoTransaction transaction = 2;
     Timestamp confirmed_at = 3;    
     string version_number = 4;
     bytes running_hash = 5;
-    bytes message_id = 6; // message id in underlying blockchain like iota
+    LedgerAnchor ledger_anchor  = 6; // message id in underlying blockchain like iota
 
     repeated AccountBalance account_balances = 7; 
+    BalanceDerivation balance_derivation = 8;
 }
