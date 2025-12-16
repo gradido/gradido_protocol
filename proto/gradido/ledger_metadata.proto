@@ -4,26 +4,28 @@ package proto.gradido;
 import "proto/hiero/basic_types.proto"; 
 
 message LedgerAnchor {
-  enum AnchorType {
-    ANCHOR_UNSPECIFIED = 0;
-    IOTA_MESSAGE = 1;
-    HIERO_TRANSACTION = 2;
-    LEGACY_GRADIDO_DB = 3; // archived, non-deterministic
+  enum Type {
+    UNSPECIFIED = 0;
+    IOTA_MESSAGE_ID = 1;
+    HIERO_TRANSACTION_ID = 2;
+    LEGACY_GRADIDO_DB_TRANSACTION_ID = 3; // archived, non-deterministic
+    NODE_TRIGGER_TRANSACTION_ID = 4; // for by gradido node triggered transactions
   }
 
-  AnchorType type = 1;
+  Type type = 1;
 
   oneof anchor_id {
     bytes iota_message_id = 2;
     hiero.TransactionID hiero_transaction_id = 3;
     uint64 legacy_transaction_id = 4;
+    uint64 node_trigger_transaction_id = 5;
   }
 }
 
 enum BalanceDerivation {
-  DERIVATION_UNSPECIFIED = 0;
+  UNSPECIFIED = 0;
   // Balances & decay can be recalculated deterministically
-  DERIVATION_NODE_COMPUTED = 1;
+  NODE = 1;
   // Balances are accepted as-is from external / legacy system
-  DERIVATION_EXTERNAL_AUTHORITATIVE = 2;
+  EXTERN = 2;
 };
