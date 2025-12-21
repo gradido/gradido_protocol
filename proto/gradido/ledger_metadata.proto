@@ -10,6 +10,10 @@ message LedgerAnchor {
     HIERO_TRANSACTION_ID = 2;
     LEGACY_GRADIDO_DB_TRANSACTION_ID = 3; // archived, non-deterministic
     NODE_TRIGGER_TRANSACTION_ID = 4; // for by gradido node triggered transactions
+    LEGACY_GRADIDO_DB_COMMUNITY_ID = 5;
+    LEGACY_GRADIDO_DB_USER_ID = 6;
+    LEGACY_GRADIDO_DB_CONTRIBUTION_ID = 7;
+    LEGACY_GRADIDO_DB_TRANSACTION_LINK_ID = 8;
   }
 
   Type type = 1;
@@ -19,6 +23,10 @@ message LedgerAnchor {
     hiero.TransactionID hiero_transaction_id = 3;
     uint64 legacy_transaction_id = 4;
     uint64 node_trigger_transaction_id = 5;
+    uint64 legacy_community_id = 6;
+    uint64 legacy_user_id = 7;
+    uint64 legacy_contribution_id = 8;
+    uint64 legacy_transaction_link_id = 9;
   }
 }
 
