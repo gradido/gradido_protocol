@@ -10,9 +10,9 @@ message AccountBalance {
 
 message EncryptedMemo {
     enum MemoKeyType {
-        SHARED_SECRET = 0,
-        COMMUNITY_SECRET = 1,
-        PLAIN = 2,
+        SHARED_SECRET = 0;
+        COMMUNITY_SECRET = 1;
+        PLAIN = 2;
     };
     MemoKeyType type = 1;
     bytes memo = 2; 
