@@ -215,7 +215,7 @@ message TransactionID {
      * This value MUST be strictly less than `consensusTimestamp` when the
      * transaction is submitted.
      */
-    Timestamp transactionValidStart = 1;
+    gradido.Timestamp transactionValidStart = 1;
 
     /**
      * An Account identifier.
