@@ -37,6 +37,8 @@ syntax = "proto3";
 
 package proto.hiero;
 
+import "proto/gradido/basic_types.proto";
+
 /**
  * A unique identifier for an Hedera account.
  *

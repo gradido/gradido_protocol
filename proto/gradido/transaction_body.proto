@@ -32,8 +32,7 @@ message TransactionBody {
         RegisterAddress register_address = 9;
         GradidoDeferredTransfer deferred_transfer = 10; 
         CommunityRoot community_root = 11;
-        GradidoRedeemDeferredTransfer = 12;
-        GradidoTimeoutDeferredTransfer = 13;
+        GradidoRedeemDeferredTransfer redeem_deferred_transfer = 12;
+        GradidoTimeoutDeferredTransfer timeout_deferred_transfer = 13;
     }       
 }
-
