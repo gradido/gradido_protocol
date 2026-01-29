@@ -44,14 +44,5 @@ message TransferAmount {
     string community_id = 3;
 }
 
-message EncryptedMemo {
-    bytes pubkey = 1; // pubkey which was used for encryption
-    bytes memo = 2; // encrypted memo, max 250 chars 
-}
-
-message EncryptedMemoMap {
-    repeated EncryptedMemo encrypted_memo = 1;
-}
-
 
 
