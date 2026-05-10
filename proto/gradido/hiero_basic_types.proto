@@ -35,9 +35,9 @@
  */
 syntax = "proto3";
 
-package proto.hiero;
+package proto.gradido;
 
-import "proto/gradido/basic_types.proto";
+import "basic_types.proto";
 
 /**
  * A unique identifier for an Hedera account.
@@ -217,7 +217,7 @@ message TransactionID {
      * This value MUST be strictly less than `consensusTimestamp` when the
      * transaction is submitted.
      */
-    gradido.Timestamp transactionValidStart = 1;
+    Timestamp transactionValidStart = 1;
 
     /**
      * An Account identifier.

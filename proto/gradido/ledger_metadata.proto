@@ -1,7 +1,7 @@
 syntax = "proto3";
 
 package proto.gradido;
-import "proto/hiero/basic_types.proto"; 
+import "hiero_basic_types.proto";
 
 message LedgerAnchor {
   enum Type {
@@ -20,7 +20,7 @@ message LedgerAnchor {
 
   oneof anchor_id {
     bytes iota_message_id = 2;
-    hiero.TransactionID hiero_transaction_id = 3;
+    TransactionID hiero_transaction_id = 3;
     uint64 legacy_transaction_id = 4;
     uint64 node_trigger_transaction_id = 5;
     uint64 legacy_community_id = 6;
