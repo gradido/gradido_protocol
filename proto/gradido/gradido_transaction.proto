@@ -2,8 +2,8 @@ syntax = "proto3";
 
 package proto.gradido;
 
-import "proto/gradido/basic_types.proto";
-import "proto/gradido/ledger_metadata.proto";
+import "basic_types.proto";
+import "ledger_metadata.proto";
 
 message GradidoTransaction {
 	SignatureMap sig_map = 1;

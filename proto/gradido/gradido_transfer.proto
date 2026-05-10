@@ -2,7 +2,7 @@ syntax = "proto3";
 
 package proto.gradido;
 
-import "proto/gradido/basic_types.proto";
+import "basic_types.proto";
 
 message GradidoTransfer {
     TransferAmount sender = 1;
@@ -11,25 +11,25 @@ message GradidoTransfer {
 
 // transaction type for chargeable transactions
 // for transaction for people which haven't a account already
-// consider using a seed number for key pair generation for recipiant 
+// consider using a seed number for key pair generation for recipiant
 // using seed as redeem key for claiming transaction, technically make a default Transfer transaction from recipiant address
 // seed must be long enough to prevent brute force, maybe base64 encoded
-// to own account 
+// to own account
 message GradidoDeferredTransfer {
     // amount is amount with decay for timespan between transaction was received and timeout
-    // useable amount can be calculated 
+    // useable amount can be calculated
     // recipiant address don't need to be registered in blockchain with register address
     GradidoTransfer transfer = 1;
     // if confiremdAt + timeoutDuration timestamp is reached if it wasn't used, it will be booked back minus decay
     // with a GradidoTimeoutDeferredTransfer Transaction which don't need a signature
     DurationSeconds timeout_duration = 2;
 
-    // split for n recipient 
+    // split for n recipient
     // max gradido per recipient? or per transaction with cooldown?
 
 }
 
-// redeem deferred transfer and book back decay rest for redeemed amount 
+// redeem deferred transfer and book back decay rest for redeemed amount
 message GradidoRedeemDeferredTransfer {
     uint64 deferredTransferTransactionNr = 1;
     GradidoTransfer transfer = 2;
