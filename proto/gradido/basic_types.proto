@@ -49,6 +49,6 @@ message TransferAmount {
 }
 
 message Version {
-    uint8_t major = 1;
-    uint8_t minor = 2;
+    uint8 major = 1;
+    uint8 minor = 2;
 }
