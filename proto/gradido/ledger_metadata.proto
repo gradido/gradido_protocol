@@ -6,7 +6,7 @@ import "hiero_basic_types.proto";
 message LedgerAnchor {
   enum Type {
     UNSPECIFIED = 0;
-    IOTA_MESSAGE_ID = 1;
+    // IOTA_MESSAGE_ID = 1; // Not longer used
     HIERO_TRANSACTION_ID = 2;
     LEGACY_GRADIDO_DB_TRANSACTION_ID = 3; // archived, non-deterministic
     NODE_TRIGGER_TRANSACTION_ID = 4; // for by gradido node triggered transactions
@@ -19,14 +19,9 @@ message LedgerAnchor {
   Type type = 1;
 
   oneof anchor_id {
-    bytes iota_message_id = 2;
-    TransactionID hiero_transaction_id = 3;
-    uint64 legacy_transaction_id = 4;
-    uint64 node_trigger_transaction_id = 5;
-    uint64 legacy_community_id = 6;
-    uint64 legacy_user_id = 7;
-    uint64 legacy_contribution_id = 8;
-    uint64 legacy_transaction_link_id = 9;
+    // bytes iota_message_id = 2; // Not longer used
+    TransactionID hiero_transaction_id = 3; // only for type HIERO_TRANSACTION_ID
+    uint64 id = 4; // for all other types
   }
 }
 

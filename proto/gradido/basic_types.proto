@@ -5,7 +5,7 @@ package proto.gradido;
 message AccountBalance {
   bytes        pubkey = 1;
   int64        balance = 2;
-  string       community_id = 3;
+  bytes        community_uuid = 3;
 }
 
 message EncryptedMemo {
@@ -15,11 +15,11 @@ message EncryptedMemo {
         PLAIN = 2;
     };
     MemoKeyType type = 1;
-    bytes memo = 2; 
+    bytes memo = 2;
 }
 
 message SignaturePair {
-    bytes pubkey = 1;  
+    bytes pubkey = 1;
     bytes signature = 2;
 }
 
@@ -45,8 +45,5 @@ message DurationSeconds {
 message TransferAmount {
 	bytes pubkey = 1;
 	int64 amount = 2;
-    string community_id = 3;
+    bytes community_uuid = 3;
 }
-
-
-

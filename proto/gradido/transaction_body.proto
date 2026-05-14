@@ -24,7 +24,7 @@ message TransactionBody {
     string version_number = 3;
 
 	CrossGroupType type = 4;
-    string other_group = 5; // only used if not local transaction
+    bytes other_community_uuid = 5; // only used if not local transaction
     oneof data {
         GradidoTransfer transfer = 6;
         GradidoCreation creation = 7;
