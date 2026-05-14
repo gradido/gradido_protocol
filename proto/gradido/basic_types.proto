@@ -47,8 +47,3 @@ message TransferAmount {
 	int64 amount = 2;
     bytes community_uuid = 3;
 }
-
-message Version {
-    uint8 major = 1;
-    uint8 minor = 2;
-}
