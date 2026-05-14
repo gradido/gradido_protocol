@@ -16,7 +16,7 @@ message ConfirmedTransaction {
     uint64 id = 1;
     GradidoTransaction transaction = 2;
     Timestamp confirmed_at = 3;
-    string version_number = 4;
+    Version version_number = 4;
     bytes running_hash = 5;
     LedgerAnchor ledger_anchor  = 6; // message id in underlying blockchain like iota
 

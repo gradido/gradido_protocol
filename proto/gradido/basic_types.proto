@@ -8,6 +8,10 @@ message AccountBalance {
   bytes        community_uuid = 3;
 }
 
+message DurationSeconds {
+    uint64 seconds = 1;
+}
+
 message EncryptedMemo {
     enum MemoKeyType {
         SHARED_SECRET = 0;
@@ -38,12 +42,13 @@ message TimestampSeconds {
     int64 seconds = 1; // Number of complete seconds since the start of the epoch
 }
 
-message DurationSeconds {
-    uint64 seconds = 1;
-}
-
 message TransferAmount {
 	bytes pubkey = 1;
 	int64 amount = 2;
     bytes community_uuid = 3;
+}
+
+message Version {
+    uint8_t major = 1;
+    uint8_t minor = 2;
 }

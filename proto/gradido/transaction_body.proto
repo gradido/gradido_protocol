@@ -21,7 +21,7 @@ message TransactionBody {
 
     repeated EncryptedMemo memos = 1;
     Timestamp created_at = 2;
-    string version_number = 3;
+    Version version_number = 3;
 
 	CrossGroupType type = 4;
     bytes other_community_uuid = 5; // only used if not local transaction
